@@ -8,6 +8,7 @@ import Write from "./pages/write/Write";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./components/context/Context";
+import About from "./pages/about/About";
 
 function App() {
   const {user}= useContext(Context);
@@ -22,6 +23,7 @@ function App() {
         <Route element={user ? <Write/> : <Register/>} path="/write"/>
         <Route element={user ? <Settings/> : <Register/>} path="/settings"/>
         <Route element={<Single/>} path="/post/:postId"/>
+        <Route element={<About/>} path="/about"/>
       </Routes>
       </Router>
 
